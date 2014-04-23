@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="Employee" class="com.augmentis.Employee">
+		<property name="firstName" value="Michael"></property>
+		<property name="lastName" value="Michael"></property>
+		<property name="salary" value="0"></property>
+		<property name="department" ref="Department"></property>
+	</bean>
+	<bean id="Department" class="com.augmentis.Department">
+		<property name="dept_name" value=""></property>
+	</bean>
+	<bean id="MainApp" class="com.augmentis.MainApp">
+	</bean>
+	<bean id="EmployeeAction" class="com.augmentis.action.EmployeeAction">
+		<property name="em" ref="Employee"></property>
+		<property name="dp" ref="Department"></property>
+		<property name="app" ref="MainApp"></property>
+	</bean>
+
+</beans>
